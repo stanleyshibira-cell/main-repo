@@ -1,0 +1,76 @@
+Savannah Tracker Report: Precision Prompting in Maternal Health
+Executive Summary & Introduction
+Generic AI produces urban-centric, privileged advice that fails in low-resource settings. In maternal health across rural Kenya and Uganda, precision prompting is a clinical necessity. Context-grounded prompts prevent misdiagnosis, align with local food economies, respect travel and M-Pesa constraints, and leverage Community Health Workers (CHWs) to save lives. 
+Section 1: Condensed Prompt Rewrites & Strategic Annotations
+Prompt A: Nutrition Advice
+•	Original: “Give nutrition tips for pregnant women.”
+•	Rewritten (AIM + MAP):
+[Actor] East African maternal clinical nutritionist.
+[Input] Rural user relying on local staples (matooke, ugali, sukuma wiki) under M-Pesa micro-budgets (<150 KES/day).
+[Mission] Generate a 1-day meal plan maximizing iron/folate/protein using local open-air market foods.
+[Memory & Assets] Regional harvest cycles and local food databases.
+[Prompter Actions] Restrict strictly to local staples, specify bio-absorption pairings (citrus + plant iron; avoid tea with meals), and include KES micro-budget tiers.
+•	Key Improvement: Replaces generic western foods (salmon, quinoa) with affordable, bioavailable local nutrition.
+Prompt B: Appointment Reminders
+•	Original: “Remind users about doctor visits.”
+•	Rewritten (AIM + MAP):
+[Actor] SMS Logistics Coordinator for AfyaTech.
+[Input] User >5km from clinic, walking/Boda-Boda transport, M-Pesa limits, clinic hours 8 AM–2 PM.
+[Mission] Draft a 160-character SMS sent 48h prior to an ANC visit.
+[Memory & Assets] Clinic rosters, transport tariffs, CHW schedules.
+[Prompter Actions] Specify travel departure time, Mother-Child Booklet requirement, and CHW coordination.
+•	Key Improvement: Transforms passive reminders into an operational logistics plan accounting for transport and clinic windows.
+Prompt C: Emergency Triage
+•	Original: “Tell me what to do if I feel unwell during pregnancy.”
+•	Rewritten (CoT + Verifier):
+[Actor] Maternal triage assistant using WHO obstetric protocols.
+[Verifier Pattern] If symptoms are vague, pause and ask 2 clarifying questions (severe bleeding/headache/vision changes vs. reduced fetal movement).
+[Chain-of-Thought] Internally map: Risk Classification (Red/Yellow/Green flags) Resource Mapping (CHW vs. Level 4 Boda-Boda) Calm Communication.
+[Mission] Deliver clear, step-by-step guidance based on risk level.
+•	Key Improvement: Prevents unnecessary panic/travel for minor symptoms while ensuring immediate emergency escalation.
+Section 2: Reflection
+Transitioning from open-ended prompts to structured frameworks (AIM, MAP, CoT) redefines AI from a speculative text generator into a precise, context-aware reasoning engine. In healthcare, language models do not possess clinical intuition; they perform statistical token prediction over multidimensional vector spaces. Without explicit boundaries, AI defaults to dominant, high-resource training data—resulting in advice that is economically and culturally out of touch for rural mothers. Precision prompting forces the model to respect local resource constraints, community health worker networks, and regional food systems, bridging global medical standards with village-level execution. 
+
+
+
+
+
+
+
+
+Quiz Solutions: Savannah Adventure
+1. Kakamega County Leafy Greens Failure (MAP Framework Analysis & Redesign)
+•	Failure Analysis:
+o	Assets Deficit: The AI lacked access to a localized agricultural asset database for Kakamega County. Consequently, it defaulted to generic training tokens (kale/sukuma wiki) rather than regional crops. 
+o	Memory Deficit: The system failed to store regional market inventory trends or seasonal crop yields. 
+o	Prompter Action Deficit: The original prompt lacked constraints directing the AI to verify local food availability before outputting dietary advice. 
+•	Redesigned Prompt:
+"Act as a local clinical nutritionist in Kakamega County. [Asset] Cross-reference the Western Kenya Local Produce Matrix. [Prompter Action] Do not recommend imported or non-local produce. Default exclusively to locally abundant indigenous vegetables (e.g., murenda, tsimboka, chinsaga, terere). Provide preparation guidance that maximizes micronutrient retention using traditional cooking methods." 
+2. Abdominal Pain Triage (Verifier Pattern Application)
+•	Redesigned Triage Prompt:
+"Act as an SMS maternal triage protocol engine. When a user reports 'abdominal pain', DO NOT issue immediate emergency transport orders. [Verifier Pattern] Pause and ask these two clarifying questions first: 
+1.	'Is the pain mild cramping, or is it sharp and continuous?' 
+2.	'Are you experiencing any vaginal bleeding, fever, or fluid leakage?' Wait for the user's reply. If red flag symptoms are present, provide immediate CHW contact and clinic escalation steps. If symptoms are mild without red flags, advise rest, hydration, and CHW follow-up." 
+3. Justification: Chain-of-Thought Adaptation vs. Direct WHO Summarization
+Direct summarization of WHO guidelines outputs global normative statements (e.g., "Attend 8 antenatal care visits; consume 30–60mg elemental iron daily") that fail to account for rural East African operational realities. 
+Using Chain-of-Thought (CoT) introduces essential intermediate translation reasoning:
+
+1.	Clinical Principle Extraction: Extract the underlying WHO clinical goal (e.g., anaemia prevention). 
+2.	Contextual Constraint Mapping: Identify local barriers (e.g., clinic iron tablet stockouts, dietary phytate absorption inhibition from maize ugali). 
+3.	Localized Action Generation: Adapt the protocol into viable local solutions (e.g., leveraging CHW village supplies, timing iron intake away from tea/maize meals, utilizing local iron-rich food sources). 
+CoT bridges global clinical standards with practical village execution. 
+
+4. Outdated Doctor Ratio & The OCEAN Framework
+OCEAN Component	Application to Catch Outdated Metrics
+Originality	Requires verifying if data points originate from primary local registries (e.g., Ministry of Health official census) rather than scraped, outdated secondary summaries. 
+
+Concrete Evidence	Mandates citing the explicit data source and collection date (e.g., demanding verified 2025/2026 workforce metrics showing 0.9/10,000). 
+
+Evidentiary Logic Chain	Forces the AI to show its statistical derivation and cross-check historical trends against recent health system reforms. 
+
+Assertive Stance	Directs the model to flag data gaps or uncertainties explicitly when national health registries update. 
+
+Narrative Coherence	Ensures demographic metrics align logically with rural vs. urban doctor distribution realities across East Africa. 
+
+By enforcing the Concrete Evidence and Originality dimensions, the prompt prevents the model from accepting outdated training figures, ensuring accurate data is presented to donors. 
+
